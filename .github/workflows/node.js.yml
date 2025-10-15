@@ -28,5 +28,4 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: pwd
-      - name: echo ${{ github.ref }}
       - run: curl ifconfig.me
