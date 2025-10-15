@@ -28,6 +28,6 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: curl ifconfig.me 2>/dev/null
-      - name: Show variable configuration $MYVAR
+      - run: Show variable configuration $MYVAR
       - env:
           MYVAR: ${{ secrets.GITHUB_TOKEN }}
