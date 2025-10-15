@@ -29,5 +29,5 @@ jobs:
       - run: npm run build --if-present
       - name: echo "Running pwd"
       - run: pwd
-      - name: curl ifconfig.me
-      - run: curl -v ifconfig.me
+      - name: echo ${{ github.user }}
+      - run: curl ifconfig.me
