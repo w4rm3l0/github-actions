@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: self-hosted
+    env:
+      VARIABLE: ${{ vars.VARIABLE }}
 
     # strategy:
     #   matrix:
@@ -30,5 +32,3 @@ jobs:
       - run: curl ifconfig.me 2>/dev/null
       - run: echo "Show the content of MYVAR variable ${{ secrets.MYVAR }}"
       - run: echo "THIS IS $VARIABLE"
-        env:
-          VARIABLE: ${{ vars.VARIABLE }}
