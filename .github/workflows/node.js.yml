@@ -29,4 +29,6 @@ jobs:
       - run: npm run build --if-present
       - run: curl ifconfig.me 2>/dev/null
       - run: echo "Show the content of MYVAR variable ${{ secrets.MYVAR }}"
-      - run: echo "THIS IS $VARIABLE""
+      - run: echo "THIS IS $VARIABLE"
+        env:
+          VARIABLE: ${{ vars.VARIABLE }}
