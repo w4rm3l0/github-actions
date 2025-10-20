@@ -52,4 +52,4 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd ~/app
             npm ci --omit=dev
-            pm2 startOrGracefulReload ecosystem.config.js
+            pm2 startOrGracefulReload ecosystem.config.cjs
