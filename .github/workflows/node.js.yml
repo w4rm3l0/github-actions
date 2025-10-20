@@ -41,4 +41,4 @@ jobs:
           target: app
 
       - name: I am curious which dir am I at?
-        run-name: pwd
+        run: pwd
