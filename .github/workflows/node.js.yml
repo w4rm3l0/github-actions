@@ -28,7 +28,8 @@ jobs:
     environment: production
     steps:
       - name: Deploy
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
+
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
         with:
