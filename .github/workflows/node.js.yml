@@ -39,4 +39,6 @@ jobs:
           port: ${{ secrets.PORT }}
           source: ./*
           target: app
-          run: cd app && npm ci
+
+      - name: I am curious which dir am I at?
+        run-name: pwd
