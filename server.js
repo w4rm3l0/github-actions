@@ -5,4 +5,7 @@ const app = express();
 app.get("/", (_, res) => {
   res.send("Github Actions");
 });
-http.createServer(app).listen(8007, () => console.log("Server running"));
+
+const PORT = process.env.SERVER_PORT || 8007;
+
+http.createServer(app).listen(PORT, () => console.log(`Server running on ${PORT}`));

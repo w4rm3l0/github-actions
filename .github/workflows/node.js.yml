@@ -47,7 +47,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
+          env:
+            SERVER_PORT: ${{ vars.SERVER_PORT }}
           script: |
+            echo "Server will be running on port: $SERVER_PORT"
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd ~/app
