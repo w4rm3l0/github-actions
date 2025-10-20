@@ -40,5 +40,14 @@ jobs:
           source: ./*
           target: app
 
-      - name: I am curious which dir am I at?
-        run: pwd
+      - name: Run post deploy commands
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ~/app
+            npm ci --omit=dev
+            pm2 startOrGracefulReload ecosystem.config.js
