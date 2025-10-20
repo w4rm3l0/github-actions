@@ -48,6 +48,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            export PATH=$PATH:/usr/bin:/usr/local/bin
             cd ~/app
             npm ci --omit=dev
             pm2 startOrGracefulReload ecosystem.config.js
